@@ -1,0 +1,220 @@
+<html>
+    <title>
+        New Quote
+    </title>
+    <head>
+        <style>
+            body{
+                background-color: blue;
+            }
+            #box{
+
+                margin-left: 400px;
+                margin-top: 200px;
+                width: 500px;
+                width: 500px;
+                margin-bottom: 100px;
+                color: white;
+
+
+            }
+            #subox{
+                font-size: 25px;
+                color: blue;
+                /* border: 1px solid black; */
+                border-radius: 5px;
+                box-shadow: 3px 3px rgb(182, 182, 182);
+                /* box-shadow: black; */
+                margin-top: 10px;
+                background-color: white;
+                
+            }
+            button{
+                background-color: blue;
+                color: white;
+                box-shadow: 3px 3px rgb(189, 184, 184);
+                width: 130px;
+                height: 35px;
+                text-align: center;
+                margin-left: 200px;
+                margin-bottom: 10px;
+                
+                
+            }
+            #line{
+                margin-bottom: 20px;
+                font-size: 25px;
+
+            }
+        </style>
+        <script>
+            function change(){
+                var color=["magenta","red","green","voilet","skyblue","purple","darkgreen","darkblue","darkorange","indigo",]
+                
+                var quotes =[ {
+        "quote": "Be yourself; everyone else is already taken.",
+        "author": "Oscar Wilde",
+        "profession": "Irish poet",
+        "topics": [
+            "Inspirational",
+            "Advice",
+            "Humor"
+        ]
+    },
+    {
+        "quote": "To live is the rarest thing in the world. Most people exist, that is all.",
+        "author": "Oscar Wilde",
+        "profession": "Irish poet",
+        "topics": [
+            "Philosophy",
+            "Humor"
+        ]
+    },
+    {
+        "quote": "True friends stab you in the front.",
+        "author": "Oscar Wilde",
+        "profession": "Irish poet",
+        "topics": [
+            "Philosophy",
+            "People"
+        ]
+    },
+    {
+        "quote": "Women are made to be Loved, not understood.",
+        "author": "Oscar Wilde",
+        "profession": "Irish poet",
+        "topics": [
+            "Philosophy",
+            "Humor"
+        ]
+    },
+    {
+        "quote": "Be the change that you wish to see in the world.",
+        "author": "Mahatma Gandhi",
+        "profession": "Indian leader",
+        "topics": [
+            "Inspirational",
+            "Philosophy",
+            "Advice"
+        ]
+    },
+    {
+        "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        "author": "Mahatma Gandhi",
+        "profession": "Indian leader",
+        "topics": [
+            "Inspirational",
+            "Life",
+            "Advice"
+        ]
+    },
+    {
+        "quote": "No one can make you feel inferior without your consent.",
+        "author": "Eleanor Roosevelt",
+        "profession": "Former First Lady of the United States",
+        "topics": [
+            "Wisdom"
+        ]
+    },
+    {
+        "quote": "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+        "author": "Eleanor Roosevelt",
+        "profession": "Former First Lady of the United States",
+        "topics": [
+            "Wisdom",
+            "People"
+        ]
+    },
+    {
+        "quote": "Do what you feel in your heart to be right - for you'll be criticized anyway.",
+        "author": "Eleanor Roosevelt",
+        "profession": "Former First Lady of the United States",
+        "topics": [
+            "Wisdom",
+            "Advice"
+        ]
+    },
+    {
+        "quote": "Do one thing every day that scares you.",
+        "author": "Eleanor Roosevelt",
+        "profession": "Former First Lady of the United States",
+        "topics": [
+            "Wisdom",
+            "Life"
+        ]
+    }]          
+                let element=parseInt(Math.random()*10)
+                document.body.style.backgroundColor=color[element]
+                document.getElementById("subox").style.color=color[element]
+                document.getElementById("button").style.backgroundColor=color[element]
+                console.log(element)
+                document.getElementById("line2").innerHTML=quotes[element].quote
+                document.getElementById("name").innerHTML=quotes[element].author
+                
+            }
+            var time = setInterval(showTime, 1000);
+            function showTime() {
+                let time = new Date();
+                let hour = time.getHours();
+                let min = time.getMinutes();
+                let sec = time.getSeconds();
+                let am_pm = "AM";
+      
+                if (hour >= 0 && hour < 4) {
+                    
+                    am_pm = "night";
+                }
+                else if(hour >= 4 && hour < 12) {
+                    
+                    am_pm = "morning";
+                }
+                else if(hour >= 12 && hour < 16) {
+                    
+                    am_pm = "afternoon";
+                }
+                else if(hour >= 16 && hour < 20) {
+                    
+                    am_pm = "evening";
+                }
+                
+                else{
+                    am_pm = "night";
+                }
+               
+      
+      
+                console.log(am_pm)
+                document.getElementById("newday")
+                    .innerHTML = am_pm;
+            
+            }
+            
+        </script>
+
+    </head>
+
+<body>
+    <div id="box">
+        <div id="line">
+            <span>Let's start our </span>
+            <span id="newday"></span>
+            <span>with a new quote</span>
+        </div>
+    
+    <div id="subox"  >
+       <p>
+        <span style="font-size: 50px;">“
+        </span>
+    <span id="line2">The first step to getting the things hou want out of life is this: decide what you want.</span>
+        <span style="font-size: 50px;">”</span>
+       <p id="name" dir="rtl">By Ben Stein</p>
+
+       </p>
+        <button id="button" onclick="change()"> New Quote </button>
+    </div>       
+
+    </div>
+   
+    
+</body>
+</html>
